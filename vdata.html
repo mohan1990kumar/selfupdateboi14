@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UserData</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+
+        .container {
+  width: 90%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.container li:last-child {
+  margin-bottom: 0;
+}
+
+#updating-text {
+  text-align: center;
+}
+
+#updating-text span {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 10px auto;
+  }
+
+  .container li {
+    margin-bottom: 6px;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+	<div class="container">
+  <div id="updating-text">
+    <span>Updating...</span>
+  </div>
+</div>
+
+	<div class="container">
+		<h1>UserData</h1>
+		<div id="contactData">
+			<ul id="list"></ul>
+		</div>
+	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-database.js"></script>
+
+
+
+<script src="firebase01.js">  </script>
+<script> function addDataToList(data) {
+    const ul = document.getElementById('list');
+    const container = document.createElement('div');
+    container.className = 'container';
+
+    Object.entries(data).forEach(([label, value]) => {
+        const li = document.createElement('li');
+        li.textContent = `${label}: ${value}`;
+        container.appendChild(li);
+    });
+
+    ul.insertBefore(container, ul.firstChild);
+}
+
+function fetchAllData() {
+    firebase
+        .database()
+        .ref('ududip007')
+        .on('value', (snapshot) => {
+            const data = snapshot.val();
+            Object.values(data).forEach((item) => {
+                addDataToList(item);
+            });
+        });
+}
+
+window.onload = function () {
+    document.getElementById('contactData').style.display = 'block';
+    fetchAllData();
+};
+  </script>
+
+
+
+
+</body>
+</html>

