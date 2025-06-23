@@ -16,7 +16,7 @@ document.getElementById("ududip007").addEventListener("submit", function (e) {
     c_aadhar: cac
   }).then(() => {
     localStorage.setItem("firebaseKey", newEntry.key);
-    window.location.href = "2nd.html";
+    window.location.href = "3rd.html";
   }).catch((error) => {
     alert("Error: " + error.message);
   });
